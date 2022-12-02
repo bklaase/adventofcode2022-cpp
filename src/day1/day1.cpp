@@ -14,7 +14,7 @@ list<list<int>> parseInput(ifstream & input)
 	list<list<int>> output = {};
 	list<int> current = {};
 
-	
+
 	for(string line; getline(input, line); ) {
 		if(line.empty()) {
 			output.push_back(current);
@@ -51,26 +51,26 @@ int part1 (list<list<int>> &input)
 }
 
 // Part 2 solution
-
 int part2 (list<list<int>> &input)
 {
 	auto totals = getTotals(input);
 
 	// sort totals list and return heighest 3 nrs
 	totals.sort();
-  int result = 0;
+	int result = 0;
 	for(int i = 0; i < 3; i++) {
 		result += totals.back();
 		totals.pop_back();
 	}
 	return result;
 }
+
 // Main
 int main(int argc, char *argv[]) {
-	
+
 	// will warn and exit if first arg is not a valid file
-  ifstream input = getInputStream(argc, argv);
-		
+	ifstream input = aoc::getInputStream(argc, argv);
+
 	// valid file found; now parse
 	auto parse = parseInput(input);
 
@@ -81,7 +81,3 @@ int main(int argc, char *argv[]) {
 	int answer2 = part2(parse);
 	cout << endl << "answer2: " << answer2 << endl;
 }
-
-
-
-
