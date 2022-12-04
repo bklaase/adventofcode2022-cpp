@@ -7,12 +7,14 @@
 
 using namespace std;
 
+typedef list<int> backpack_t;
+typedef list<backpack_t> input_t;
+
 // Parse
-list<list<int>> parseInput(ifstream & input)
-{
+input_t parseInput(ifstream & input) {
 	string line;
-	list<list<int>> output = {};
-	list<int> current = {};
+	input_t output = {};
+	backpack_t current = {};
 
 
 	for(string line; getline(input, line); ) {
@@ -28,21 +30,19 @@ list<list<int>> parseInput(ifstream & input)
 }
 
 // helper function: get totals from int list list
-list<int> getTotals (list<list<int>> &input)
-{
+list<int> getTotals (input_t &input) {
 	// replace all groups of ints, with their sum
 	list<int> totals(input.size(),0);
-	transform(input.cbegin(), input.cend(), totals.begin(), [](list<int> part) {
-		int partialtotal = accumulate(part.cbegin(), part.cend(), 0);
-		return partialtotal;
-	});
+	transform(input.cbegin(), input.cend(), totals.begin(),
+			  [](backpack_t part) {
+				  return accumulate(part.cbegin(), part.cend(), 0);
+			  });
 
 	return totals;
 }
 
 // Part 1 solution
-int part1 (list<list<int>> &input)
-{
+int part1 (input_t &input) {
 	auto totals = getTotals(input);
 
 	// sort totals list and return heighest nr
@@ -51,8 +51,7 @@ int part1 (list<list<int>> &input)
 }
 
 // Part 2 solution
-int part2 (list<list<int>> &input)
-{
+int part2 (input_t &input) {
 	auto totals = getTotals(input);
 
 	// sort totals list and return heighest 3 nrs
