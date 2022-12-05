@@ -13,7 +13,6 @@ typedef list<round_t> input_t;
 
 // Parse
 input_t parseInput(ifstream& input) {
-    string line;
     input_t output = {};
 
     for(string line; getline(input, line); ) {

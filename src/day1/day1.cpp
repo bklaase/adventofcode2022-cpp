@@ -12,10 +12,8 @@ typedef list<backpack_t> input_t;
 
 // Parse
 input_t parseInput(ifstream & input) {
-	string line;
 	input_t output = {};
 	backpack_t current = {};
-
 
 	for(string line; getline(input, line); ) {
 		if(line.empty()) {

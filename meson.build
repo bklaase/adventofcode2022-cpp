@@ -10,3 +10,4 @@ experiments = executable('exp', 'src/cpp-experiments/experiments.cpp', include_d
 # solutions
 day1 = executable('day1', 'src/day1/day1.cpp', include_directories : incdir)
 day2 = executable('day2', 'src/day2/day2.cpp', include_directories : incdir)
+day3 = executable('day3', 'src/day3/day3.cpp', include_directories : incdir)
