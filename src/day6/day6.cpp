@@ -31,7 +31,7 @@ uint findNextMarkerPos(input_t& buffer, uint markerSize) {
             previous.push_back(current); pos++; continue;
         } // after this we are processing positions of markerSize and heigher
 
-        //check if current, of any char matches one of the others; only if setsize == markerSize, all were unique
+        //check if current, or any char matches one of the others; 
         set<char> charSet(previous.cbegin(), previous.cend());
         charSet.insert(current);
         if(charSet.size() == markerSize) return pos; // we're done. reminder: pos is 1-indexed
@@ -39,7 +39,6 @@ uint findNextMarkerPos(input_t& buffer, uint markerSize) {
         // else dump oldest char, and rotate current char in
         previous.erase(0,1); previous.push_back(current);
         pos++;
-        continue;
     }
     return 0; // no markers found!
 }

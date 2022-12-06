@@ -14,8 +14,7 @@ namespace aoc {
 		}
 
 		// try read input file from cli arg 1
-		// ifstream input (argv[1]);
-		ifstream input ("../src/day6/day6.txt");
+		ifstream input (argv[1]);
 
 		if (!input.is_open()) {
 			cout << "Error opening file: " << argv[1];
