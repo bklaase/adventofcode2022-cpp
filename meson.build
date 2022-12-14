@@ -20,3 +20,4 @@ day6 = executable('day6', 'src/day6/day6.cpp', include_directories : incdir, lin
 day7 = executable('day7', 'src/day7/day7.cpp', include_directories : incdir, link_with : aocLib)
 day8 = executable('day8', 'src/day8/day8.cpp', include_directories : incdir, link_with : aocLib)
 day9 = executable('day9', 'src/day9/day9.cpp', include_directories : incdir, link_with : aocLib)
+day10 = executable('day10', 'src/day10/day10.cpp', include_directories : incdir, link_with : aocLib)
